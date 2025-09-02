@@ -84,7 +84,7 @@
 :root {
   --primary: #e63946;
   --secondary: #1d3557;
-  --light: #f9fafb;
+  --light: #ffffff;
   --dark: #111;
   --text: #444;
   --radius: 1.5rem;
@@ -92,15 +92,15 @@
 
   /* --- COLORES PERSONALIZABLES PARA LA OLA DEL HERO --- */
   /* Cambia estos 4 colores para modificar la ola animada */
-  --wave-color-1: rgb(201, 4, 4);
-  --wave-color-2: rgb(7, 0, 112);
-  --wave-color-3: rgb(192, 0, 0);
-  --wave-color-4: rgb(7, 0, 112);
+  --wave-color-1: #e63946;
+  --wave-color-2: #1d3557;
+  --wave-color-3: #e63946;
+  --wave-color-4: #1d3557;
 
   /* --- COLORES PERSONALIZABLES PARA LA OLA DEL FOOTER --- */
-  --footer-wave-color-1: rgba(29, 53, 87, 0.7);
-  --footer-wave-color-2: rgba(29, 53, 87, 0.5);
-  --footer-wave-color-3: rgba(29, 53, 87, 0.3);
+  --footer-wave-color-1: #1d3557;
+  --footer-wave-color-2: #1d3557;
+  --footer-wave-color-3: #1d3557;
   --footer-wave-color-4: var(--secondary); /* Color sólido del footer */
 }
 
@@ -120,7 +120,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
-  background-color: #f7f9fc;
+  background-color: #ffffff;
 }
 
 /* ========== Utilidades ========== */
@@ -663,7 +663,7 @@ header .menu.show {
 }
 #gallery.cards {
   display: flex;
-  flex-direction: row;      /* Solo esta línea */
+  flex-direction: row; /* Solo esta línea */
   overflow-x: auto;
   gap: 2rem;
   flex-wrap: nowrap;
@@ -682,12 +682,12 @@ header .menu.show {
   padding: 0;
   margin: 0;
   background: transparent;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
   transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .gallery a:hover {
-  box-shadow: 0 16px 48px rgba(29,53,87,0.18);
+  box-shadow: 0 16px 48px rgba(29, 53, 87, 0.18);
   transform: translateY(-6px) scale(1.03);
 }
 .gallery img {
@@ -762,7 +762,7 @@ header .menu.show {
   object-fit: cover;
   margin-bottom: 1rem;
   border: 3px solid var(--primary);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* Blog/Consejos cards con imagen y enlace */
@@ -787,7 +787,6 @@ header .menu.show {
     height: 70px;
   }
 }
-
 
 /* ========== Formularios ========== */
 .form-container {
@@ -913,6 +912,7 @@ footer a {
   object-fit: cover;
   margin-bottom: 1rem;
   border: 3px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .blog-card {
   padding: 0;
@@ -1118,7 +1118,8 @@ footer {
   font-weight: 800;
 }
 
-.footer-section p, .footer-section a {
+.footer-section p,
+.footer-section a {
   font-size: 1rem;
   line-height: 1.7;
   color: #ccc;
