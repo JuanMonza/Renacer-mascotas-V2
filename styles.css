@@ -656,17 +656,7 @@ header .menu.show {
 }
 
 /* ========== Pricing ========== */
-#pricing {
-    background-color: #f8f9fa; /* Un color de fondo para la sección */
-    padding-top: 4rem;
-}
-
-#pricing .cards {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Columnas más uniformes */
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
+/* ========== Estilos de los Planes (ACTUALIZADO CON MEDIDAS) ========== */
 .plan-card {
     padding: 0;
     display: flex;
@@ -674,8 +664,9 @@ header .menu.show {
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-    min-height: 250px;
-    background-color: var(--secondary);
+    width: 388px; /* Ancho del contenedor */
+    height: 279.02px; /* Altura del contenedor */
+    background-color: rgba(29, 53, 87, 0.9);
     color: var(--light);
     border-radius: var(--radius);
     overflow: hidden;
@@ -701,6 +692,14 @@ header .menu.show {
     transition: transform 0.5s ease;
 }
 
+.plan-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* Opcional: para hacerlas circulares */
+    margin-bottom: 1rem;
+}
+
 .plan-card h3 {
     color: var(--light);
     font-weight: 800;
@@ -715,25 +714,45 @@ header .menu.show {
 
 .plan-details {
     position: absolute;
-    bottom: -100%; /* Oculto por defecto, se subirá al hacer hover */
+    bottom: -100%;
     left: 0;
     width: 100%;
     padding: 2.5rem 1rem 1rem;
-    background-color: var(--primary);
+    background-color: rgba(230, 57, 70, 0.9);
     color: var(--light);
     z-index: 3;
     transition: bottom 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .plan-details ul {
     list-style: none;
     padding: 0;
     text-align: left;
+    width: 100%;
+    max-width: 250px;
 }
 
 .plan-details li {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
+}
+
+.plan-details .btn-more-info {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+    background: var(--secondary);
+    border-radius: 5px;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+}
+
+.plan-details .btn-more-info:hover {
+    background-color: #1a2e47;
+    transform: translateY(-2px);
 }
 
 .plan-card:hover .plan-details {
@@ -757,12 +776,12 @@ header .menu.show {
 }
 
 .plan-card .card-wave svg path {
-    fill: #e9ecef; /* Un gris claro para la ola */
+    fill: rgba(255, 255, 255, 0.7);
     transition: fill 0.5s ease;
 }
 
 .plan-card:hover .card-wave svg path {
-    fill: var(--light); /* Blanco al hacer hover para el efecto deseado */
+    fill: rgba(255, 255, 255, 0.9);
 }
 #gallery.cards {
   display: flex;
@@ -1381,5 +1400,12 @@ footer {
 
     .footer-section.about .socials {
         justify-content: center;
+    }
+}
+/* Media query para hacer los contenedores responsivos de nuevo */
+@media (max-width: 900px) {
+    .plan-card {
+        width: auto;
+        height: auto;
     }
 }
