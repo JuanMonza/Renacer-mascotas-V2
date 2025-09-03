@@ -1,3 +1,134 @@
+
+/* ========== Títulos, descripciones y hover-info de planes ========== */
+.plan-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-top: 1.2rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+.plan-discount {
+    background: var(--primary);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 1em 0 1em 0;
+    padding: 0.4em 1.1em;
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 3;
+}
+.plan-desc {
+    font-size: 1.05rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+.plan-hover-info {
+    display: none;
+    font-size: 1rem;
+    color: var(--primary);
+    background: #f8fafc;
+    border-radius: 1em;
+    padding: 0.7em 1em;
+    margin-top: 0.7em;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: opacity 0.3s;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 90%;
+    pointer-events: none;
+}
+.plan-img-box {
+    position: relative;
+}
+.plan-img-box:hover .plan-hover-info {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+/* ========== Planes solo imágenes (horizontal y responsivo) ========== */
+.pricing-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3.5rem;
+    padding: 3.5rem 0 2.5rem 0;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f8fafc;
+    border-radius: 2.5rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+}
+
+.plan-img-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+    border-radius: 2.5rem;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.13);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    min-width: 260px;
+    min-height: 340px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.plan-img-box:hover {
+    box-shadow: 0 24px 64px rgba(0,53,128,0.18);
+    transform: translateY(-16px) scale(1.10);
+}
+
+.plan-image {
+    width: 200px;
+    height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        background: #f7f7f7;
+}
+
+@media (max-width: 900px) {
+    .pricing-cards {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+    }
+    .plan-img-box {
+        padding: 1rem;
+    }
+    .plan-image {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .plan-img-box {
+        width: 90vw;
+        max-width: 320px;
+        padding: 0.7rem;
+    }
+    .plan-image {
+        width: 80px;
+        height: 80px;
+    }
+}
 /* ========== Hero ========== */
 .hero {
     background: var(--light);
@@ -202,7 +333,18 @@
 }
 
 .services-munchkin {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.5rem;
+    align-items: stretch;
+    justify-content: center;
+    padding: 1.5rem 0;
+    max-width: 100%;
+    margin: 0 auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #eee;
 }
 
 .card,
@@ -241,16 +383,14 @@ header {
     /* Sombra con menos opacidad para un efecto más sutil */
 }
 
-/* 3. Hacer las imágenes de los planes completamente redondas */
-.plan-image {
-    width: 150px;
-    height: 150px;
+/* 3. Hacer las imágenes de los planes y blog completamente redondas y del mismo tamaño */
+.plan-image, .blog-card img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    /* Hace las imágenes de los planes completamente redondas */
     object-fit: cover;
     margin-bottom: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Añade una pequeña sombra para que destaquen */
 }
 
 /* Ajuste para que el texto de descuento quede centrado */
@@ -334,6 +474,18 @@ header {
 .blog-card {
     padding: 0;
     text-align: left;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+.blog-card:hover {
+    box-shadow: 0 8px 32px rgba(0,53,128,0.18);
+    transform: translateY(-6px) scale(1.03);
+}
+.blog-card:active {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transform: scale(0.98);
 }
 
 .blog-card a {
@@ -822,8 +974,52 @@ footer a {
 /* ================= SECCIONES ================= */
 /* Aquí irán los estilos específicos de cada sección como hero, servicios, galería, etc. */
 /* === Cards y Planes (Migrados desde styles.css) === */
+.contact-card.service-card {
+    min-width: 180px;
+    min-height: 240px;
+    max-width: 220px;
+    padding: 2rem 1.2rem 1.5rem 1.2rem;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #fff;
+    border-radius: 2.5rem;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.13);
+    transition: box-shadow 0.3s, transform 0.3s;
+    margin: 0 0.5rem;
+}
+.contact-card.service-card img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+.service-card,
+.service-card:link,
+.service-card:visited,
+.service-card:hover,
+.service-card:active {
+    text-decoration: none !important;
+    color: inherit !important;
+}
 .service-card {
-    padding: 0;
+    min-width: 180px;
+    min-height: 240px;
+    max-width: 220px;
+    padding: 2rem 1.2rem 1.5rem 1.2rem;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    background: #fff;
+    border-radius: 2.5rem;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.13);
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .plan-card {
@@ -881,8 +1077,8 @@ footer a {
 
 .service-card:hover,
 .plan-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(87, 29, 29, 0.15);
+    box-shadow: 0 24px 64px rgba(0,53,128,0.18);
+    transform: translateY(-16px) scale(1.10);
 }
 
 .service-card:hover .card-wave,
@@ -936,23 +1132,23 @@ footer a {
 
 /* ========== SECCIÓN DE PLANES ========== */
 #pricing .cards {
+    display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
+    align-items: stretch;
+    gap: 2rem;
     padding-bottom: 2rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) #ffffff;
 }
 
 .plan-card {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     text-align: center;
     width: 350px;
-    height: 279.02px;
     background-color: rgb(255, 255, 255);
     color: var(--light);
     border-radius: 65px;
@@ -961,6 +1157,7 @@ footer a {
     box-shadow: 0 8px 32px rgba(164, 157, 157, 0.557);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     min-width: 250px;
+    margin: 0;
 }
 
 .plan-card:hover {
@@ -981,8 +1178,8 @@ footer a {
 }
 
 .plan-image {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: -2rem;

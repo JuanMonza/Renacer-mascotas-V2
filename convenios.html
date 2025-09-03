@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convenios - Renacer Mascotas</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <div id="topbar"></div>
+    <div id="header"></div>
+    <script>
+        fetch('topbar.html')
+            .then(res => res.text())
+            .then(html => { document.getElementById('topbar').innerHTML = html; })
+            .then(() => {
+                fetch('header.html')
+                    .then(res => res.text())
+                    .then(html => { document.getElementById('header').innerHTML = html; });
+            });
+    </script>
+    <h1>Convenios</h1>
+    <p>Próximamente información sobre convenios.</p>
+    <section id="contact" class="reveal">
+        <div class="container section-title">
+            <h2>Contáctanos</h2>
+        </div>
+        <div id="contactos"></div>
+        <script>
+            fetch('contactos.html')
+                .then(res => res.text())
+                .then(html => { document.getElementById('contactos').innerHTML = html; });
+        </script>
+        <div id="contacto-extra"></div>
+        <script>
+            fetch('contacto_extra.html')
+                .then(res => res.text())
+                .then(html => { document.getElementById('contacto-extra').innerHTML = html; });
+        </script>
+    </section>
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(html => { document.getElementById('footer').innerHTML = html; });
+    </script>
+</body>
+</html>
