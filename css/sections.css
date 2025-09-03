@@ -1,0 +1,1073 @@
+/* ========== Hero ========== */
+.hero {
+    background: var(--light);
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 350px;
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    color: var(--secondary);
+    font-weight: 900;
+    line-height: 1.1;
+    animation: slideUp 1s ease-out;
+}
+
+.hero .badge {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.3em 1em;
+    border-radius: 2em;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.hero .lead {
+    margin: 1.2rem 0;
+    font-size: 1.25rem;
+    color: #444;
+}
+
+.hero-cta {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    background: #fff;
+    border-radius: 1em;
+    padding: 1em 2em;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.stat i {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.hero-visual {
+    position: relative;
+    flex: 1 1 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-carousel {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 12px 40px rgba(106, 97, 97, 0.521);
+}
+
+.carousel-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s;
+    border-radius: 50%;
+}
+
+.carousel-img.active {
+    opacity: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.hero-carousel:hover .carousel-btn {
+    opacity: 1;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+/* ========== NUEVA OLA ANIMADA ========== */
+.animated-wave-container {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax>use {
+    animation: wave-flow 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill: var(--wave-color-1);
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+    fill: var(--wave-color-2);
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    fill: var(--wave-color-3);
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    fill: var(--wave-color-4);
+}
+
+@keyframes wave-flow {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* ========== Servicios y Tarjetas con EFECTO DE OLA REAL (CORREGIDO) ========== */
+#services {
+    background-color: #ffffff;
+    padding-top: 4rem;
+}
+
+.services-munchkin {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card,
+.plan-card,
+.service-card,
+.testimonial {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: var(--transition);
+    background: #ffffff78;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.459);
+    text-align: center;
+}
+/* === Media Queries, Scrollbar, Header, Plan-image, Mapa y Ajustes Finales (Migrados desde styles.css) === */
+#pricing .cards::-webkit-scrollbar {
+    display: none;
+    /* Oculta la barra de desplazamiento en navegadores WebKit (Chrome, Safari) */
+}
+
+#gallery .cards::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox */
+#pricing .cards,
+#gallery .cards {
+    scrollbar-width: none;
+    /* Oculta la barra de desplazamiento en Firefox */
+}
+
+/* 2. Eliminar el borde de la sombra de la barra de navegación */
+header {
+    box-shadow: 0 8px 32px rgba(0, 53, 128, 0.2);
+    /* Sombra con menos opacidad para un efecto más sutil */
+}
+
+/* 3. Hacer las imágenes de los planes completamente redondas */
+.plan-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Hace las imágenes de los planes completamente redondas */
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Añade una pequeña sombra para que destaquen */
+}
+
+/* Ajuste para que el texto de descuento quede centrado */
+.plan-card h3 {
+    text-align: center;
+}
+
+.plan-card .discount {
+    text-align: center;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* 4. Implementar el carrusel en Testimonios */
+#testimonials .slider {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#testimonials .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+#testimonials .testimonial {
+    min-width: 100%;
+    /* Cada testimonio ocupa el ancho completo */
+    box-sizing: border-box;
+}
+
+/* Botones de navegación para el carrusel */
+.testimonial-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(29, 53, 87, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-nav-btn:hover {
+    background: var(--primary);
+}
+
+.testimonial-nav-btn.prev {
+    left: 10px;
+}
+
+.testimonial-nav-btn.next {
+    right: 10px;
+}
+
+/* 5. Mapa de Google más grande y con la ubicación */
+#map {
+    width: 72%;
+    height: 500px;
+    border-radius: 2.5rem;
+    margin: 3rem auto;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(86, 83, 83, 0.61);
+    transition: box-shadow 0.4s, transform 0.4s;
+}
+
+#map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* === Blog, Botones Flotantes y Animaciones (Migrados desde styles.css) === */
+.blog-card {
+    padding: 0;
+    text-align: left;
+}
+
+.blog-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.blog-card h3,
+.blog-card p {
+    padding: 0 1.5rem;
+}
+
+.blog-card h3 {
+    margin-top: 1rem;
+}
+
+.blog-card p {
+    padding-bottom: 1.5rem;
+}
+
+/* ========== Botones Contacto y Flotantes ========== */
+.contact-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+    background: #25d366;
+}
+
+.davi-btn {
+    background: #e30613;
+}
+
+.whatsapp-float,
+.davi-float {
+    position: fixed;
+    right: 20px;
+    border-radius: 50%;
+    z-index: 2000;
+    transition: var(--transition);
+}
+
+.whatsapp-float {
+    bottom: 20px;
+    background: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+.davi-float {
+    bottom: 95px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 20px rgba(227, 6, 19, 0.3);
+}
+
+.davi-float img {
+    width: 100%;
+    height: auto;
+}
+
+.whatsapp-float:hover,
+.davi-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(255, 0, 0, 0.2);
+}
+
+/* ========== Animaciones Generales ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* === Formularios y Footer (Migrados desde styles.css) === */
+.form-container {
+    padding: 2rem;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--secondary);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+form {
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.field {
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 1.2rem 1rem 0.6rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    transition: var(--transition);
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+
+.input::placeholder {
+    color: transparent;
+}
+
+.input:focus+label,
+.input:not([placeholder=" "])+label {
+    top: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--primary);
+}
+
+.field.full-width {
+    grid-column: 1 / -1;
+}
+
+.floating-section {
+    background: #fff;
+    border-radius: 2.5rem;
+    box-shadow: 0 8px 32px rgba(134, 117, 117, 0.72);
+    margin: 3rem auto 2rem auto;
+    padding: 50px 32px;
+    max-width: 1100px;
+    transition: box-shadow 0.4s, transform 0.4s;
+}
+
+.floating-section:hover {
+    box-shadow: 0 16px 48px rgba(0, 12, 178, 0.552);
+    transform: translateY(-6px);
+}
+
+/* ========== OLA DEL FOOTER (NUEVO) ========== */
+.footer-wave {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: -1px;
+    z-index: 2;
+}
+
+.footer-wave svg {
+    display: block;
+    width: 100vw;
+    min-width: 100vw;
+    height: 110px;
+    max-width: 100vw;
+}
+
+footer {
+    background: var(--secondary);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem 2rem 1rem;
+    position: relative;
+}
+
+footer a {
+    color: #fff;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 1.5rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px 0;
+    min-width: 200px;
+    text-align: left;
+}
+
+/* Sección de la empresa (logo, texto y redes) */
+.footer-section.about {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-section.about p {
+    color: #ccc;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.footer-section.about .socials {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.footer-section.about .socials a {
+    font-size: 1.7rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-section.about .socials a:hover {
+    color: var(--primary);
+}
+
+/* Sección de enlaces rápidos */
+.footer-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.footer-section.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.quick-links li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Sección de contacto */
+.footer-section.contact-info {
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+.contact-item .sub-text {
+    font-size: 0.85em;
+    color: #ccc;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Sección de suscripción */
+.footer-section.newsletter {
+    text-align: left;
+}
+
+.newsletter p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.newsletter .text-input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a3e59;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.newsletter .text-input::placeholder {
+    color: #ccc;
+}
+
+.newsletter .btn-subscribe {
+    padding: 12px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.newsletter .btn-subscribe:hover {
+    background-color: #c0392b;
+}
+
+/* Línea de copyright */
+.footer-bottom {
+    padding-top: 20px;
+    margin-top: 30px;
+    border-top: 1px solid #3d5a73;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+/* === Galería, Testimonios y Slider (Migrados desde styles.css) === */
+#gallery .cards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 1rem 0 2rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #eee;
+}
+
+.gallery a {
+    display: block;
+    width: 388px;
+    height: 180px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.gallery a:hover {
+    box-shadow: 0 16px 48px rgba(29, 53, 87, 0.18);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+#testimonials {
+    padding-bottom: 3rem;
+}
+
+#testimonials .container {
+    padding-top: 3rem;
+    max-width: 900px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+#testimonials .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    cursor: grab;
+}
+
+#testimonials .testimonial {
+    min-width: 100%;
+    padding: 0 1.5rem;
+}
+
+#testimonials .navigation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+}
+
+#testimonials .nav-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#testimonials .nav-dot.active {
+    background-color: var(--primary);
+}
+
+/* Slider y Testimonios generales */
+.slider {
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial {
+    min-width: 100%;
+    padding: 2rem;
+}
+
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary);
+    box-shadow: 0 2px 8px rgb(255, 255, 255);
+}
+/* ================= SECCIONES ================= */
+/* Aquí irán los estilos específicos de cada sección como hero, servicios, galería, etc. */
+/* === Cards y Planes (Migrados desde styles.css) === */
+.service-card {
+    padding: 0;
+}
+
+.plan-card {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.4s ease;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.plan-card .card-content {
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.service-card i {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    transition: color 0.4s ease;
+}
+
+.service-card h3 {
+    color: var(--dark);
+    font-size: 1.25rem;
+    transition: color 0.4s ease;
+    margin: 0;
+}
+
+.card-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    transform: translateY(101%);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+}
+
+.card-wave svg {
+    width: 100%;
+    height: 100%;
+}
+
+.service-card:hover,
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(87, 29, 29, 0.15);
+}
+
+.service-card:hover .card-wave,
+.plan-card:hover .card-wave {
+    transform: translateY(40%);
+}
+
+.service-card:hover .card-content,
+.plan-card:hover .card-content {
+    transform: translateY(-10px);
+}
+
+.service-card:hover i,
+.service-card:hover h3,
+.plan-card:hover h3 {
+    color: #c30000;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card-wave svg path {
+    fill: rgba(29, 53, 87, 0.85);
+}
+
+.service-card.card--red .card-wave svg path,
+.plan-card.card--red .card-wave svg path {
+    fill: rgba(0, 0, 0, 0.85);
+}
+
+.plan-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.plan-card h3 {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+.plan-card a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+}
+
+/* ========== SECCIÓN DE PLANES ========== */
+#pricing .cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 2rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #ffffff;
+}
+
+.plan-card {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    width: 350px;
+    height: 279.02px;
+    background-color: rgb(255, 255, 255);
+    color: var(--light);
+    border-radius: 65px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(164, 157, 157, 0.557);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    min-width: 250px;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(21, 25, 255, 0.557);
+}
+
+.plan-card .card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.plan-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: -2rem;
+}
+
+.plan-card h3 {
+    color: var(--light);
+    font-weight: 800;
+    margin-bottom: -0.5rem;
+}
+
+.plan-card .discount {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.plan-details {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 1rem 1rem;
+    background-color: rgba(0, 5, 139, 0.692);
+    color: var(--light);
+    z-index: 3;
+    transition: bottom 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plan-details ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 200px;
+}
+
+.plan-details li {
+    margin-bottom: 0.7rem;
+    font-size: 0.95rem;
+}
+
+.plan-details .btn-more-info {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.8rem;
+    background: var(--secondary);
+    border-radius: 15px;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+}
+
+.plan-details .btn-more-info:hover {
+    background-color: #ff1313;
+    transform: translateY(-2px);
+}
+
+.plan-card:hover .plan-details {
+    bottom: 0;
+}
+
+.plan-card .card-wave {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+}
+
+.plan-card .card-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.plan-card .card-wave svg path {
+    fill: rgba(149, 20, 20, 0.7);
+    transition: fill 0.5s ease;
+}
+
+.plan-card:hover .card-wave svg path {
+    fill: rgba(11, 3, 167, 0.9);
+}

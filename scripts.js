@@ -47,16 +47,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ===== Testimonial Slider =====
-    const slides = document.querySelector(".slides");
-    if (slides) {
+    // ===== Testimonial Slider con botones de navegación =====
+    const testimonialsContainer = document.querySelector("#testimonials .slider");
+    if (testimonialsContainer) {
+        const slides = testimonialsContainer.querySelector(".slides");
+        const prevBtn = testimonialsContainer.querySelector(".prev");
+        const nextBtn = testimonialsContainer.querySelector(".next");
         const testimonials = slides.querySelectorAll(".testimonial");
+
         if (testimonials.length > 1) {
-            let index = 0;
-            setInterval(() => {
-                index = (index + 1) % testimonials.length;
+            let testimonialIndex = 0;
+
+            const showTestimonial = (index) => {
                 slides.style.transform = `translateX(-${index * 100}%)`;
-            }, 5000);
+            };
+
+            nextBtn.addEventListener("click", () => {
+                testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+                showTestimonial(testimonialIndex);
+            });
+
+            prevBtn.addEventListener("click", () => {
+                testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
+                showTestimonial(testimonialIndex);
+            });
         }
     }
 
@@ -126,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const nombre = contactForm.querySelector('input[name="nombre"]').value.trim();
             const email = contactForm.querySelector('input[name="email"]').value.trim();
             const mensaje = contactForm.querySelector('textarea[name="mensaje"]').value.trim();
-            
+
             // Campos opcionales
             const asuntoInput = contactForm.querySelector('input[name="asunto"]');
             const telefonoInput = contactForm.querySelector('input[name="telefono"]');
@@ -183,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             showCarouselImg(carouselIndex);
-            
+
             if (nextBtn && prevBtn) {
                 nextBtn.addEventListener('click', () => {
                     nextCarousel();

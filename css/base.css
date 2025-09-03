@@ -1,0 +1,36 @@
+/* ================= BASE ================= */
+:root {
+    --primary: #e63946;
+    --secondary: #1d3557;
+    --light: #ffffff;
+    --dark: #111;
+    --text: #444;
+    --radius: 1.5rem;
+    --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --wave-color-1: #e63946;
+    --wave-color-2: #1d3557;
+    --wave-color-3: #e63946;
+    --wave-color-4: #1d3557;
+    --footer-wave-color-1: #1d3557;
+    --footer-wave-color-2: #1d3557;
+    --footer-wave-color-3: #1d3557;
+    --footer-wave-color-4: var(--secondary);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito", "Poppins", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}

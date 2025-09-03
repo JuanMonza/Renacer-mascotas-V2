@@ -7,8 +7,13 @@
     <meta name="description"
         content="Renacer Mascotas: cuidado premium, veterinaria, spa, nutrición y más para tus mascotas en Pereira, Dosquequebradas y Manizales." />
     <title>Renacer Mascotas</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js" defer></script>
+    <!-- Modularización CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <!-- Modularización JS -->
+    <script type="module" src="js/main.js" defer></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet" />
     <!-- Librería de iconos -->
@@ -29,20 +34,14 @@
     <div class="topbar reveal">
         <div class="container wrap">
             <span><i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <a href="tel:+57 320 705 3536" title="Llamar a Renacer Mascotas">+57 320 705 3536</a></span>
+                <a href="tel:+573000000000" title="Llamar a Renacer Mascotas">+57 300 000 0000</a></span>
             <div class="socials" aria-label="Redes sociales">
-                <a href="https://www.facebook.com/renacermascotas" target="_blank" aria-label="Facebook"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/renacermascotas" target="_blank" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@renacermascotas" target="_blank" aria-label="TikTok"><i
-                        class="fab fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/channel/UC123456789" target="_blank" aria-label="YouTube"><i
-                        class="fab fa-youtube"></i></a>
-                <a href="https://open.spotify.com/user/renacermascotas" target="_blank" aria-label="Spotify"><i
-                        class="fab fa-spotify"></i></a>
-                <a href="https://www.linkedin.com/company/renacermascotas" target="_blank" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span><i class="fa-solid fa-envelope" aria-hidden="true"></i>
                 <a href="mailto:servicioalcliente@renacermascotas.co"
@@ -238,7 +237,7 @@
         <div class="container cards pricing-cards">
             <div class="plan-card reveal">
                 <div class="card-content">
-                    <img src="/fotos/Mensual.jpg" alt="Plan Mensual" class="plan-image">
+                    <img src="/fotos/Mensual.png" alt="Plan Mensual" class="plan-image" />
                     <h3>Plan Mensual</h3>
                 </div>
                 <div class="plan-details">
@@ -259,7 +258,7 @@
             </div>
             <div class="plan-card reveal">
                 <div class="card-content">
-                    <img src="/fotos/Trimestral.jpg" alt="Plan Trimestral" class="plan-image">
+                    <img src="/fotos/Trimestral.png" alt="Plan Trimestral" class="plan-image" />
                     <h3>Plan Trimestral</h3>
                     <span class="discount">5% de descuento</span>
                 </div>
@@ -281,7 +280,7 @@
             </div>
             <div class="plan-card reveal">
                 <div class="card-content">
-                    <img src="/fotos/Semestral.jpg" alt="Plan Semestral" class="plan-image">
+                    <img src="/fotos/Semestral.png" alt="Plan Semestral" class="plan-image" />
                     <h3>Plan Semestral</h3>
                     <span class="discount">7% de descuento</span>
                 </div>
@@ -303,7 +302,7 @@
             </div>
             <div class="plan-card reveal">
                 <div class="card-content">
-                    <img src="/fotos/Anual.jpg" alt="Plan Anual" class="plan-image">
+                    <img src="/fotos/Anual.png" alt="Plan Anual" class="plan-image" />
                     <h3>Plan Anual</h3>
                     <span class="discount">10% de descuento</span>
                 </div>
@@ -326,8 +325,6 @@
         </div>
     </section>
 
-    <!-- Gallery -->
-
     <section id="gallery">
         <div class="container section-title reveal">
             <h2>Galería</h2>
@@ -343,6 +340,7 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
     <section id="testimonials">
         <div class="container section-title reveal">
             <h2>Testimonios</h2>
@@ -365,11 +363,19 @@
                     <p>“Excelente atención veterinaria y cariño por los animales.”</p>
                     <b class="client-info">- Laura P.</b>
                 </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/70" alt="Foto del cliente Miguel R." />
+                    <p>
+                        “El servicio de nutrición ha cambiado la vida de mi perro. ¡Estoy
+                        muy agradecido!”
+                    </p>
+                    <b class="client-info">- Miguel R.</b>
+                </div>
             </div>
+            <button class="carousel-btn prev" aria-label="Anterior">❮</button>
+            <button class="carousel-btn next" aria-label="Siguiente">❯</button>
         </div>
     </section>
-
-    <!-- Blog -->
 
     <section id="blog">
         <div class="container section-title reveal">
@@ -392,11 +398,7 @@
                 </a>
             </div>
         </div>
-        <button class="carousel-btn prev" aria-label="Anterior">❮</button>
-        <button class="carousel-btn next" aria-label="Siguiente">❯</button>
     </section>
-
-    <!-- Contact -->
 
     <section id="contact" class="reveal">
         <div class="container section-title">
@@ -407,7 +409,7 @@
                 <div class="contact-card service-card">
                     <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Dirección" />
                     <h3>Dirección</h3>
-                    <p>Carrera 10 #45-67</p>
+                    <p>Calle 123 #45-67</p>
                     <p>Pereira, Risaralda</p>
                 </div>
                 <div class="contact-card service-card">
@@ -423,10 +425,9 @@
                     <p>soporte@renacermascotas.com</p>
                 </div>
             </div>
-
-            <div class="map floating-section">
+            <div id="map">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.935234!2d-75.690601!3d4.814329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3887e8b8e8e8e8%3A0x8e8e8e8e8e8e8e8e!2sPereira%2C%20Risaralda!5e0!3m2!1ses!2sco!4v1693154111111!5m2!1ses!2sco"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.222383204944!2d-75.71960142512128!3d4.778844895180153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3532f518e38d73%3A0x6a19f96b29d47c49!2sCl.%2046%20%2310-47%2C%20Pereira%2C%20Risaralda!5e0!3m2!1ses-419!2sco!4v1693754877478!5m2!1ses-419!2sco"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
@@ -460,9 +461,12 @@
                     <div class="contact-buttons">
                         <a href="https://portalpagos.davivienda.com/#/comercio/6269/RENACER%20MASCOTAS%20SAS"
                             class="btn davi-btn" target="_blank" title="Pagar">
-                            <img src="fotos/btn-davivienda.webp"
-                                alt="Davivienda payment button with a cartoon house logo on a red circle background, cheerful and inviting, with the text Pagar"
-                                style="height: 1.5em; vertical-align: middle;margin-right: 8px;" />Pagar</a>
+                            <img src="fotos/btn-davivienda.webp" alt="Davivienda" style="
+                    height: 1.5em;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                  " />Pagar
+                        </a>
                         <button class="btn whatsapp-btn" type="submit" aria-label="Enviar mensaje por WhatsApp">
                             <i class="fab fa-whatsapp"></i> Enviar
                         </button>
@@ -496,13 +500,10 @@
                     servicios premium para que tu familia esté siempre feliz.
                 </p>
                 <div class="socials">
-                    <a href="https://www.facebook.com/renacermascotas" title="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/renacermascotas" title="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@renacermascotas" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.youtube.com/channel/UC123456789" title="YouTube"><i
-                            class="fab fa-youtube"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-section quick-links">
@@ -520,18 +521,18 @@
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>
-                        Carrera 10 # 46-47, Pereira<br />
+                        Calle 123 #45-67, Pereira<br />
                         <span class="sub-text">Google Maps | Waze</span>
                     </span>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-phone"></i>+57 320 705 3536
+                    <i class="fas fa-phone"></i> +57 320 705 3536
                 </div>
                 <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>Chatea con nosotros
+                    <i class="fab fa-whatsapp"></i> Chatea con nosotros
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-envelope"></i>servicioalcliente@renacermascotas.co
+                    <i class="fas fa-envelope"></i> servicioalcliente@renacermascotas.co
                 </div>
             </div>
             <div class="footer-section newsletter">
@@ -545,18 +546,11 @@
         </div>
         <div class="footer-bottom">
             © 2025 Renacer Mascotas. Todos los derechos reservados.
-            <p>Creada por Juan Monsalve</p>
-            <p>Version 5.3.2</p>
-            <p>
-                <a href="#privacy-policy">Política de Privacidad</a> |
-                <a href="#terms-of-service">Términos de Servicio</a> |
-                <a href="#cookies-policy">Política de Cookies</a>
-            </p>
         </div>
     </footer>
 
     <a href="https://wa.me/573207053536?text=Hola,%20quiero%20más%20información%20sobre%20Renacer%20Mascotas"
-        class="whatsapp-float" target="blank" aria-label="Chatear por WhatsApp">
+        class="whatsapp-float" target="_blank" aria-label="Chatear por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
