@@ -3,14 +3,15 @@ export function initTestimonialSlider() {
     const testimonialsContainer = document.querySelector("#testimonials .slider");
     if (testimonialsContainer) {
         const slides = testimonialsContainer.querySelector(".slides");
-        const prevBtn = testimonialsContainer.querySelector(".prev");
-        const nextBtn = testimonialsContainer.querySelector(".next");
+        const prevBtn = testimonialsContainer.querySelector("#testimonial-prev");
+        const nextBtn = testimonialsContainer.querySelector("#testimonial-next");
         const testimonials = slides.querySelectorAll(".testimonial");
         if (testimonials.length > 1) {
             let testimonialIndex = 0;
             const showTestimonial = (index) => {
                 slides.style.transform = `translateX(-${index * 100}%)`;
             };
+            showTestimonial(testimonialIndex);
             nextBtn.addEventListener("click", () => {
                 testimonialIndex = (testimonialIndex + 1) % testimonials.length;
                 showTestimonial(testimonialIndex);
