@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/scroll-to-top.css" />
     <!-- Modularización JS -->
     <script type="module" src="js/main.js" defer></script>
     <!-- Google Fonts optimizado -->
@@ -173,34 +174,34 @@
             <p>Haz clic para conocer las especificaciones de cada plan</p>
         </div>
         <div class="container cards pricing-cards">
-            <div class="plan-img-box">
-                <img src="/fotos/Mensual.png" alt="Plan Mensual" class="plan-image" />
-                <div class="plan-title">Plan Mensual</div>
-                <div class="plan-desc">Ideal para quienes buscan un cuidado regular y flexible cada mes.</div>
-                <div class="plan-hover-info">Incluye: 1 baño y peluquería, vacunación anual, desparasitación trimestral.
+            <div class="pricing-cards-grid">
+                <div class="plan-block">
+                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="mensual">
+                        <img src="/fotos/Mensual.png" alt="Plan Mensual" class="plan-image" />
+                    </a>
+                    <span class="plan-label">Plan Mensual</span>
                 </div>
-            </div>
-            <div class="plan-img-box">
-                <img src="/fotos/Trimestral.png" alt="Plan Trimestral" class="plan-image" />
-                <div class="plan-title">Plan Trimestral <span class="plan-discount">5% DCTO</span></div>
-                <div class="plan-desc">Perfecto para quienes desean un ahorro y continuidad en el cuidado.</div>
-                <div class="plan-hover-info">Incluye: 3 baños y peluquería, vacunación anual, desparasitación
-                    trimestral.</div>
-            </div>
-            <div class="plan-img-box">
-                <img src="/fotos/Semestral.png" alt="Plan Semestral" class="plan-image" />
-                <div class="plan-title">Plan Semestral <span class="plan-discount">7% DCTO</span></div>
-                <div class="plan-desc">La opción para quienes buscan tranquilidad y beneficios a mediano plazo.</div>
-                <div class="plan-hover-info">Incluye: 6 baños y peluquería, vacunación anual, desparasitación
-                    trimestral.</div>
-            </div>
-            <div class="plan-img-box">
-                <img src="/fotos/Anual.png" alt="Plan Anual" class="plan-image" />
-                <div class="plan-title">Plan Anual <span class="plan-discount">10% DCTO</span></div>
-                <div class="plan-desc">Máximo ahorro y protección durante todo el año para tu mascota.</div>
-                <div class="plan-hover-info">Incluye: 12 baños y peluquería, vacunación anual, desparasitación
-                    trimestral.</div>
-            </div>
+                <div class="plan-block">
+                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="trimestral">
+                        <img src="/fotos/Trimestral.png" alt="Plan Trimestral" class="plan-image" />
+                        <span class="plan-discount">5% DCTO</span>
+                    </a>
+                    <span class="plan-label">Plan Trimestral</span>
+                </div>
+                <div class="plan-block">
+                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="semestral">
+                        <img src="/fotos/Semestral.png" alt="Plan Semestral" class="plan-image" />
+                        <span class="plan-discount">7% DCTO</span>
+                    </a>
+                    <span class="plan-label">Plan Semestral</span>
+                </div>
+                <div class="plan-block">
+                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="anual">
+                        <img src="/fotos/Anual.png" alt="Plan Anual" class="plan-image" />
+                        <span class="plan-discount">10% DCTO</span>
+                    </a>
+                    <span class="plan-label">Plan Anual</span>
+                </div>
         </div>
     </section>
 
@@ -314,6 +315,9 @@
         target="blank" aria-label="Pagar con Davivienda" title="Pagar con Davivienda">
         <img src="fotos/btn-davivienda.webp" alt="boton Davivienda" />
     </a>
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba" title="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 </body>
 
 </html>
