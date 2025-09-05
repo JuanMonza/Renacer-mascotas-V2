@@ -1,144 +1,311 @@
+/* Alineación horizontal y centrado profesional de los círculos de planes */
+.pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.plan-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 220px;
+    max-width: 260px;
+    margin-bottom: 0;
+}
+
+/* Centrado profesional de la galería */
+#gallery .cards.gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto 2.5rem auto;
+}
+
+/* Color rojo empresarial para el click de los dots de testimonios */
+#testimonials .nav-dot.active {
+    background: #e30613 !important;
+    border: 2px solid #e30613 !important;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #e30613cc !important;
+    outline: none !important;
+    transition: background 0.2s, border 0.2s, box-shadow 0.2s;
+}
+.form-title {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 1.2rem 0;
+    width: 100%;
+    display: block;
+}
+.map-form-libre .form-title {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary);
+    text-align: center;
+}
+@media (max-width: 900px) {
+    .map-form-libre .form-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.7rem;
+    }
+}
+/* Layout horizontal para mapa y formulario como hijos libres en el body */
+.map-form-libre {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: stretch;
+    margin: 2.5rem auto 3rem auto;
+    max-width: 1200px;
+    min-height: 620px;
+}
+.map-form-libre > div:first-child {
+    flex: 1 1 400px;
+    min-width: 340px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.map-form-libre .map-title {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 1.2rem 0;
+    width: 100%;
+}
+.map-form-libre #map {
+    width: 100%;
+    height: 500px;
+    min-height: 340px;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(86, 83, 83, 0.13);
+    background: none;
+    margin: 0 auto;
+}
+.map-form-libre #map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    display: block;
+}
+.map-form-libre .form-container {
+    flex: 1 1 400px;
+    min-width: 340px;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 500px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 2rem;
+}
+@media (max-width: 900px) {
+    .map-form-libre {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        min-height: unset;
+    }
+    .map-form-libre > div:first-child,
+    .map-form-libre .form-container {
+        max-width: 100vw;
+        min-width: 0;
+        height: 340px;
+        padding: 1.2rem 0.5rem;
+    }
+    .map-form-libre .map-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.7rem;
+    }
+}
+html, body {
+    overflow-x: hidden !important;
+}
+
+/* Eliminar scroll horizontal en contenedores flex y grid */
+#pricing .cards,
+#gallery .cards,
+.services-munchkin,
+.about-horizontal {
+    overflow-x: visible !important;
+}
+
+/* Ajuste para evitar desbordes accidentales */
+.container,
+.container.cards,
+.container.section-title,
+.container.cards.pricing-cards {
+    max-width: 100vw;
+    overflow-x: visible;
+}
+/* Título centrado y texto arriba en Sobre Nosotros */
+
+/* Sección Sobre Nosotros optimizada */
+.about-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0 auto 3rem auto;
+    padding: 2.5rem 0;
+}
+.about-video {
+    width: 420px;
+    max-width: 40vw;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    background: #000;
+}
+.about-text, .about-text-top {
+    max-width: 540px;
+    color: var(--dark);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+.about-text h2 {
+    color: var(--secondary);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+@media (max-width: 900px) {
+    .about-horizontal {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem 0;
+    }
+    .about-video {
+        max-width: 90vw;
+        width: 100%;
+    }
+    .about-text, .about-text-top {
+        max-width: 95vw;
+    }
+}
+/* Sección Sobre Nosotros centrada con video para redes */
+.about-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0 auto 3rem auto;
+    padding: 2.5rem 0 2.5rem 0;
+}
+.about-video-centered {
+    width: 420px;
+    max-width: 90vw;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    background: #000;
+    margin-bottom: 2rem;
+}
+.about-title {
+    color: var(--secondary);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+.about-desc {
+    max-width: 540px;
+    color: var(--dark);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    text-align: center;
+}
+/* Sección Sobre Nosotros horizontal */
+.about-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0 auto 3rem auto;
+    padding: 2.5rem 0 2.5rem 0;
+}
+.about-video {
+    width: 420px;
+    max-width: 40vw;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    background: #000;
+}
+.about-text {
+    max-width: 540px;
+    color: var(--dark);
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+.about-text h2 {
+    color: var(--secondary);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+@media (max-width: 900px) {
+    .about-horizontal {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem 0;
+    }
+    .about-video {
+        max-width: 90vw;
+        width: 100%;
+    }
+    .about-text {
+        max-width: 95vw;
+    }
+}
 
 /* Enlaces en cards de servicios sin subrayado ni color diferente */
 .service-card a {
     text-decoration: none;
     color: inherit;
-}
-/* Nuevo layout profesional para los planes */
-.plan-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-    min-width: 220px;
-    max-width: 260px;
-    position: relative;
-}
-.plan-img-top {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.7rem;
-}
-.plan-img-top .plan-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    background: #f7f7f7;
-}
-.plan-img-top .plan-discount {
-    position: absolute;
-    top: 1.2rem;
-    left: 1.2rem;
-    background: var(--primary);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 1em 0 1em 0;
-    padding: 0.4em 1.1em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    z-index: 3;
-}
-.plan-label {
-    background: var(--secondary);
-    color: #fff;
-    border: none;
-    border-radius: 1.2em;
-    padding: 0.5em 1.5em;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    transition: background 0.3s, color 0.3s;
-    margin-bottom: 0.5rem;
-}
-.plan-label:hover {
-    background: var(--primary);
-    color: #fff;
-}
-.plan-info-box {
-    width: 100%;
-    max-width: 240px;
-    background: #f8fafc;
-    border-radius: 1em;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    padding: 0.7em 1em;
-    margin-top: 0.5rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-.plan-info-box.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-.plan-info-content {
-    font-size: 1rem;
-    color: var(--primary);
-    text-align: center;
-}
-/* Cards de planes con imagen y descuento arriba, info abajo */
-.plan-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    border-radius: 2.5rem;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.13);
-    padding: 2.5rem 2.5rem 2rem 2.5rem;
-    min-width: 260px;
-    min-height: 340px;
-    max-width: 320px;
-    margin: 0 1.2rem 2rem 1.2rem;
-    position: relative;
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-.plan-card:hover {
-    box-shadow: 0 24px 64px rgba(0,53,128,0.18);
-    transform: translateY(-16px) scale(1.10);
-}
-.plan-img-top {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.2rem;
-}
-.plan-img-top .plan-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    background: #f7f7f7;
-}
-.plan-img-top .plan-discount {
-    position: absolute;
-    top: 1.2rem;
-    left: 1.2rem;
-    background: var(--primary);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 1em 0 1em 0;
-    padding: 0.4em 1.1em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    z-index: 3;
-}
-.plan-info {
-    width: 100%;
-    text-align: center;
 }
 /* Blog cards en una sola línea horizontal */
 #blog-cards {
@@ -275,14 +442,6 @@
     background: #f8fafc;
     border-radius: 2.5rem;
     box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-    display: grid;
-    grid-template-columns: repeat(4, minmax(220px, 1fr));
-    gap: 3.5rem;
-    justify-items: center;
-    align-items: start;
-    padding: 3.5rem 0 2.5rem 0;
-    max-width: 1600px;
-    margin: 0 auto;
 }
 
 .plan-img-box {
@@ -306,10 +465,10 @@
 .plan-image {
     width: 200px;
     height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        background: #f7f7f7;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    background: #f7f7f7;
 }
 
 @media (max-width: 900px) {
@@ -937,12 +1096,18 @@ footer a {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo {
-    max-width: 150px;
-    margin-bottom: 18px;
+    .container.cards.pricing-cards {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center !important;
+        align-items: flex-end;
+        gap: 2.5rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding: 0;
+    }
     filter: brightness(0) invert(1);
 }
 
@@ -1513,47 +1678,6 @@ footer a {
     fill: rgba(149, 20, 20, 0.7);
     transition: fill 0.5s ease;
 }
-
 .plan-card:hover .card-wave svg path {
     fill: rgba(11, 3, 167, 0.9);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: stretch;
-    padding: 1rem 0 2rem 0;
-    overflow-x: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    justify-content: center;
-    align-items: stretch;
-    min-width: 260px;
-    max-width: 280px;
-    flex: 1 1 260px;
-    height: 340px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 2rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s, transform 0.3s;
-    text-align: center;
-    box-shadow: 0 24px 64px rgba(0,53,128,0.18);
-    transform: translateY(-10px) scale(1.07);
-    font-size: 3rem;
-    margin-bottom: 1.2rem;
-    color: var(--primary);
-    transition: color 0.3s;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.7rem;
-    color: var(--secondary);
-    transition: color 0.3s;
-    opacity: 0;
-    transition: opacity 0.3s;
-    opacity: 1;
 }

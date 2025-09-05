@@ -18,7 +18,8 @@
     <!-- Google Fonts optimizado -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
     <!-- FontAwesome optimizado vía jsDelivr CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="fotos/favicon.ico" />
 </head>
 
@@ -154,16 +155,23 @@
 
     <!-- About -->
     <section id="about">
-        <div class="container section-title reveal">
+        <div class="container section-title reveal active">
             <h2>Sobre Nosotros</h2>
-            <p>Amor, confianza y experiencia.</p>
+            <p>Conoce quiénes somos y por qué amamos cuidar de tus mascotas</p>
         </div>
-        <div class="container reveal">
-            <p>
-                En <b>Renacer Mascotas</b>, entendemos que tu mascota es parte de tu
-                familia. Por eso ofrecemos servicios de primera calidad para
-                garantizar su felicidad y bienestar.
-            </p>
+        <div class="about-horizontal">
+            <div class="about-text about-text-top">
+                <p>
+                    En <b>Renacer Mascotas</b> nos apasiona el bienestar animal. Somos un equipo comprometido con el
+                    cuidado, amor y salud de tus mascotas.<br><br>
+                    Ofrecemos servicios veterinarios, spa, nutrición, exequiales y más, con atención personalizada y
+                    profesional en Pereira, Dosquebradas y Manizales.<br><br>
+                    ¡Tu mascota es parte de nuestra familia! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Maxime maiores voluptate ullam deleniti voluptatum amet esse, a ipsa consequatur cupiditate optio.
+                    Explicabo saepe adipisci vel quae omnis, voluptatibus impedit maiores.
+                </p>
+            </div>
+            <video src="fotos/nosotros.mp4" controls poster="fotos/4.jpg" class="about-video" autoplay muted playsinline></video>
         </div>
     </section>
 
@@ -174,35 +182,33 @@
             <p>Haz clic para conocer las especificaciones de cada plan</p>
         </div>
         <div class="container cards pricing-cards">
-            <div class="pricing-cards-grid">
-                <div class="plan-block">
-                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="mensual">
-                        <img src="/fotos/Mensual.png" alt="Plan Mensual" class="plan-image" />
-                    </a>
-                    <span class="plan-label">Plan Mensual</span>
-                </div>
-                <div class="plan-block">
-                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="trimestral">
-                        <img src="/fotos/Trimestral.png" alt="Plan Trimestral" class="plan-image" />
-                        <span class="plan-discount">5% DCTO</span>
-                    </a>
-                    <span class="plan-label">Plan Trimestral</span>
-                </div>
-                <div class="plan-block">
-                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="semestral">
-                        <img src="/fotos/Semestral.png" alt="Plan Semestral" class="plan-image" />
-                        <span class="plan-discount">7% DCTO</span>
-                    </a>
-                    <span class="plan-label">Plan Semestral</span>
-                </div>
-                <div class="plan-block">
-                    <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="anual">
-                        <img src="/fotos/Anual.png" alt="Plan Anual" class="plan-image" />
-                        <span class="plan-discount">10% DCTO</span>
-                    </a>
-                    <span class="plan-label">Plan Anual</span>
-                </div>
-        </div>
+            <div class="plan-block">
+                <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="mensual">
+                    <img src="/fotos/Mensual.png" alt="Plan Mensual" class="plan-image" />
+                </a>
+                <span class="plan-label">Plan Mensual</span>
+            </div>
+            <div class="plan-block">
+                <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="trimestral">
+                    <img src="/fotos/Trimestral.png" alt="Plan Trimestral" class="plan-image" />
+                    <span class="plan-discount">5% DCTO</span>
+                </a>
+                <span class="plan-label">Plan Trimestral</span>
+            </div>
+            <div class="plan-block">
+                <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="semestral">
+                    <img src="/fotos/Semestral.png" alt="Plan Semestral" class="plan-image" />
+                    <span class="plan-discount">7% DCTO</span>
+                </a>
+                <span class="plan-label">Plan Semestral</span>
+            </div>
+            <div class="plan-block">
+                <a href="planes.html" class="plan-img-top plan-hover-link" data-plan="anual">
+                    <img src="/fotos/Anual.png" alt="Plan Anual" class="plan-image" />
+                    <span class="plan-discount">10% DCTO</span>
+                </a>
+                <span class="plan-label">Plan Anual</span>
+            </div>
     </section>
 
     <section id="gallery">
@@ -271,12 +277,12 @@
 
     <section id="blog">
 
-    <div class="container section-title reveal">
-        <h2>Blog</h2>
-        <p>Consejos y novedades</p>
-    </div>
-    <div class="container cards" id="blog-cards"></div>
-    <script type="module" src="js/blog.js"></script>
+        <div class="container section-title reveal">
+            <h2>Blog</h2>
+            <p>Consejos y novedades</p>
+        </div>
+        <div class="container cards" id="blog-cards"></div>
+        <script type="module" src="js/blog.js"></script>
     </section>
     <section id="contact" class="reveal">
         <div class="container section-title">
